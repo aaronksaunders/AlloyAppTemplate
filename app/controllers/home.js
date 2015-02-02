@@ -29,9 +29,6 @@ Alloy.Collections.cars.reset([{
 	"model" : "Altima"
 }]);
 
-// we need to let the sharedhome controller know about the parent
-// Navigation window so it can properly open windows on IOS
-OS_IOS && $.sharedhome.setNavWindow($.nav);
 
 function doopen(evt) {
 	if (OS_ANDROID) {
@@ -40,38 +37,12 @@ function doopen(evt) {
 	}
 }
 
-function doadd(evt) {
-	if (OS_IOS) {
-		openAsModal(Alloy.createController('createItem').getView(), $.nav);
-	} else if (OS_ANDROID) {
-		Alloy.createController('createItem').getView().open();
-	}
+function doAdd(evt) {
+	console.debug(JSON.stringify(evt));
+
+	var controller = Alloy.createController('createItem');
+	var view = controller.getView();
+
+	Alloy.Globals.openWindow(view, true);
 }
 
-/**
- * helper function for opening a modal window in IOS with the
- * proper title bar
- *
- * @param {Object} _view
- */
-function openAsModal(_view, _navView) {
-	if (OS_IOS) {
-
-		var navWindow = _navView;
-
-		if (!_navView) {
-			navWindow = Titanium.UI.iOS.createNavigationWindow({
-				window : _view
-			});
-		}
-
-		_view.navWindow = navWindow;
-		navWindow.open({
-			modal : true
-		});
-	} else {
-		_view.open({
-			modal : true
-		});
-	}
-}

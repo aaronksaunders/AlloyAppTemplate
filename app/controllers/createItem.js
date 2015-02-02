@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
 function closeWindow(evt) {
-	$.createItemWindow.close();
+	Alloy.Globals.closeWindow($.createItemWindow);
 }
 
 function doOpen(evt) {
@@ -16,8 +16,8 @@ function doOpen(evt) {
 //that will cause the data to be rendered
 //$.car.set(args.data);
 
-//free the model-view data binding resources when this
-//view-controller closes
+// free the model-view data binding resources when this
+// view-controller closes
 $.createItemWindow.addEventListener("close", function() {
 	$.destroy();
 });

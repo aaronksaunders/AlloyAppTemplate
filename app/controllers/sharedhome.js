@@ -1,16 +1,4 @@
 var args = arguments[0] || {};
-var navWindow = null;
-
-/**
- * we need this to open the windows using the navigation window
- * object on IOS. Since this is a view being added as required
- * 
- * @see- http://docs.appcelerator.com/titanium/3.0/#!/guide/Alloy_XML_Markup-section-35621528_AlloyXMLMarkup-RequireElement
- */
-$.setNavWindow = function(_navWindow) {
-	navWindow = _navWindow;
-};
-
 
 //controllers/cars.js
 function transform(model) {
@@ -55,33 +43,6 @@ $.table.addEventListener('click', function(_event) {
 	});
 
 	//get view returns to root view when no view ID is provided
-	if (OS_IOS) {
-		navWindow.openWindow(detailWindowController.getView());
-	} else if (OS_ANDROID) {
-		detailWindowController.getView().open();
-	}
+	Alloy.Globals.openWindow(detailWindowController.getView());
 
 });
-
-/**
- * helper function for opening a modal window in IOS with the
- * proper title bar
- *
- * @param {Object} _view
- */
-function openAsModal(_view) {
-	if (OS_IOS) {
-		var navWindow = Titanium.UI.iOS.createNavigationWindow({
-			window : _view
-		});
-
-		_view.navWindow = navWindow;
-		navWindow.open({
-			modal : true
-		});
-	} else {
-		_view.open({
-			modal : true
-		});
-	}
-}

@@ -1,3 +1,7 @@
 // do anything you need before the first screen
 
-Alloy.createController('home').getView().open();
+var homeController = Alloy.createController('home');
+
+Alloy.Globals.navWindow = homeController.getView();
+
+Alloy.Globals.navWindow.open();
