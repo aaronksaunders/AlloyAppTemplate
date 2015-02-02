@@ -2,6 +2,10 @@
 
 var homeController = Alloy.createController('home');
 
-Alloy.Globals.navWindow = homeController.getView();
+if (OS_IOS) {
+	Alloy.Globals.navWindow = homeController.getView();
 
-Alloy.Globals.navWindow.open();
+	Alloy.Globals.navWindow.open();
+} else {
+	homeController.getView().open();
+}

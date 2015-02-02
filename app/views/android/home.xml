@@ -3,13 +3,13 @@
 
 <Alloy>
   <!-- Phone Window -->
-	<Window id="win" class="container" onOpen="doopen" formFactor="handheld">
+	<Window id="win" class="container" onOpen="doOpen" formFactor="handheld">
 		<ActionBar/>
 
 		<!-- this implements the ActionBar menu icons.  remove if not needed -->
 		<!-- information on the possible native values for icon: http://androiddrawables.com/Menu.html -->
 		<Menu id="menu" platform="android">
-		    <MenuItem id="closeitem" title="Add" icon="Ti.Android.R.drawable.ic_menu_add"  showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"  onClick="doadd"/>
+		    <MenuItem id="closeitem" title="Add" icon="Ti.Android.R.drawable.ic_menu_add"  showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"  onClick="doAdd"/>
 		</Menu>
 
 		<Require src="sharedhome" id="sharedhome"/>
@@ -17,13 +17,13 @@
 
 
   <!-- Table Window -->
-  <Window id="win" class="container" onOpen="doopen" formFactor="tablet">
+  <Window id="win" class="container" onOpen="doOpen" formFactor="tablet">
     <ActionBar/>
 
     <!-- this implements the ActionBar menu icons.  remove if not needed -->
     <!-- information on the possible native values for icon: http://androiddrawables.com/Menu.html -->
     <Menu id="menu" platform="android">
-        <MenuItem id="closeitem" title="Add" icon="Ti.Android.R.drawable.ic_menu_add"  showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"  onClick="doadd"/>
+        <MenuItem id="closeitem" title="Add" icon="Ti.Android.R.drawable.ic_menu_add"  showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"  onClick="doAdd"/>
     </Menu>
 
     <Require src="sharedhome" id="sharedhome"/>

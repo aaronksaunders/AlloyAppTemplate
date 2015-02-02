@@ -30,7 +30,7 @@ Alloy.Collections.cars.reset([{
 }]);
 
 
-function doopen(evt) {
+function doOpen(evt) {
 	if (OS_ANDROID) {
 		var abx = require('com.alcoapps.actionbarextras');
 		abx.setBackgroundColor('#dddddd');
