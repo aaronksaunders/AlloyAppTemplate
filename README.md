@@ -48,6 +48,9 @@ if (OS_IOS){
 
 ```
 
+Found issue with `RightNavButtons` and modified the code. If you need multiple buttons, see [https://jira.appcelerator.org/browse/TIMOB-17367](https://jira.appcelerator.org/browse/TIMOB-17367) for solutions
+
+
 # Versions
 
 **1.1**
