@@ -1,0 +1,24 @@
+
+".container" : {
+ 	backgroundColor: "#fff",
+ 	orientationModes: [Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT,Ti.UI.PORTRAIT,Ti.UI.UPSIDE_PORTRAIT]
+},
+"#detailWindow" : {
+	title:"Car Detail Window",
+	layout:"vertical",
+	backgroundColor : "white",
+	modal : true
+},
+"Label" : {
+	top: 10,
+	textAlign: "center",
+	font: {
+		fontWeight:"bold",
+		fontSize:18
+	},
+	color: "#000",
+	height:Ti.UI.SIZE
+},
+"#closeBtn" : {
+	top: "20dp"
+}

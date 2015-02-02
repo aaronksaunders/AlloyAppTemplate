@@ -1,5 +1,8 @@
 <Alloy>
+	<Collection src="cars"></Collection>
 	<View class="container">
-		<Label id="greeting"/>
+		<TableView id="table" dataCollection="cars" dataTransform="transform" dataFilter="filter">
+			<TableViewRow title="{title}" modelId="{id}" />
+		</TableView>
 	</View>
 </Alloy>

@@ -1,0 +1,15 @@
+<!-- //views/detailWindow.xml -->
+<Alloy>
+	<Model src="cars" instance="true" id="car" />
+	<Window id="detailWindow" class="container" onOpen="doOpen" model="$.car">
+
+		<!-- this screen is cross-platform, so we need to add the platform selector to the ActionBar tag 	-->
+		<!-- thig tag will only be used when the app is compiled for Android 								-->
+		<ActionBar displayHomeAsUp="true" onHomeIconItemSelected="closeWindow" platform="android"/>
+		
+		<!-- UI FOR WINDOW -->
+		<Label id="make_lbl" text="{$.car.make}"></Label>
+		<Label id="model_lbl" text="{$.car.model}"></Label>
+
+	</Window>
+</Alloy>
